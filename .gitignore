@@ -1,0 +1,31 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Optional local history and logs
+.history/
+.phantomshell-history/
+history.json
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+
+# Generated build and coverage output
+build/
+dist/
+coverage/
+
+# Local demo recordings
+demo-output/

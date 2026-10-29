@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101013">
+  <title>PhantomShell AI — Decode the terminal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="PhantomShell home"><span class="brand-mark">ϟ</span><span>phantom<span class="brand-accent">shell</span></span></a>
+    <div class="topbar-right">
+      <span class="privacy"><span class="privacy-dot"></span> LOCAL &amp; PRIVATE</span>
+      <button class="icon-button" id="historyToggle" type="button" aria-label="Open history" title="History">◷</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR TERMINAL WHISPERER</div>
+      <h1>Decode the <span>dark.</span></h1>
+      <p class="intro-copy">Paste the command or error that has you stuck. Get a clear explanation and a fix, powered by AI running right on your machine.</p>
+      <div class="model-row">
+        <span class="model-label">LOCAL MODEL</span>
+        <div class="select-wrap"><select id="modelSelect" aria-label="Choose a local Ollama model" disabled><option>Looking for models…</option></select><span class="select-caret">⌄</span></div>
+        <span class="status-pill" id="modelStatus"><span class="status-indicator"></span><span id="statusText">Connecting</span></span>
+      </div>
+    </section>
+
+    <section class="workbench" aria-label="Terminal analysis">
+      <div class="panel-head"><div class="panel-title"><span class="terminal-icon">⌘</span> TERMINAL INPUT</div><span class="panel-caption">NOTHING RUNS. EVER.</span></div>
+      <label class="field-label" for="commandInput">THE COMMAND <span>OPTIONAL</span></label>
+      <div class="editor command-editor"><div class="editor-gutter">›</div><textarea id="commandInput" maxlength="15000" spellcheck="false" placeholder="e.g. npm run build"></textarea></div>
+      <label class="field-label error-label" for="errorInput">THE ERROR <span>OPTIONAL</span></label>
+      <div class="editor error-editor"><div class="editor-gutter error-gutter">×</div><textarea id="errorInput" maxlength="15000" spellcheck="false" placeholder="Paste the error message or terminal output…"></textarea></div>
+      <div class="composer-footer">
+        <label class="spooky-toggle"><input id="spookyToggle" type="checkbox"><span class="toggle-track"><span></span></span><span>Spooky commentary <span class="optional">OPTIONAL</span></span></label>
+        <span class="char-count" id="charCount">0 / 25,000</span>
+      </div>
+      <button class="analyze-button" id="analyzeButton" type="button"><span class="button-spark">✳</span><span id="buttonLabel">Summon an explanation</span><span class="button-arrow">↗</span></button>
+      <p class="privacy-note"><span>▣</span> Your terminal text stays on this machine and goes only to your local Ollama model.</p>
+      <div class="message" id="message" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="result-panel" id="resultPanel" hidden aria-live="polite">
+      <div class="panel-head"><div class="panel-title"><span class="result-icon">✳</span> THE DIAGNOSIS</div><button class="text-button" id="copyButton" type="button">COPY</button></div>
+      <p class="result-disclaimer">PhantomShell did not run your command. Review model suggestions before running anything.</p>
+      <div class="result-content" id="resultContent"></div>
+    </section>
+
+    <div class="trust-row"><span><b>01</b> Paste safely</span><i></i><span><b>02</b> Understand the cause</span><i></i><span><b>03</b> Get back to building</span></div>
+    <footer class="footer"><span>MADE FOR THE MOMENTS BETWEEN <em>“WHY IS THIS BROKEN?”</em> &amp; <em>“OH.”</em></span><span>PHANTOMS NOT INCLUDED <span class="ghost">♟</span></span></footer>
+  </main>
+
+  <aside class="history-drawer" id="historyDrawer" aria-label="Analysis history" aria-hidden="true">
+    <div class="drawer-head"><div><div class="drawer-eyebrow">YOUR LOCAL LOG</div><h2>Recent séances</h2></div><button class="icon-button close-button" id="closeHistory" aria-label="Close history" type="button">×</button></div>
+    <div class="history-list" id="historyList"></div>
+    <label class="history-preference"><input id="historyEnabled" type="checkbox"><span>Save future analyses in this browser</span></label>
+    <button class="clear-button" id="clearHistory" type="button">Clear all history</button>
+    <p class="drawer-note">History stays on this device. Clear it any time.</p>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+  <script src="app.js"></script>
+</body>
+</html>
