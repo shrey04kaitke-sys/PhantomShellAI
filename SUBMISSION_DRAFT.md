@@ -14,11 +14,11 @@ The app is read-only. It never executes pasted commands, and its interface label
 
 ## Demo
 
-[Add a real demo or recording URL after recording and review.]
+[Public demo URL needed. The real local browser recording is `demo-output/phantomshell-local-demo.webm`; upload it to an appropriate video host (for example, YouTube, Vimeo, or Loom) before adding an accessible URL here.]
 
 ## Code
 
-[Add the GitHub repository URL after the repository is created and published.]
+[Public repository URL needed after creating `PhantomShellAI` under `shrey04kaitke-sys` and pushing the local commits.]
 
 ## How I Built It
 
@@ -27,6 +27,8 @@ The MVP uses Python’s standard library for a local HTTP server and Ollama inte
 History is opt-in, stored in the current browser’s local storage, limited to the 12 most recent results, and can be cleared in the app. The test suite covers input limits, model availability, loopback-only requests, proxy bypass, safe text rendering, history controls, and server routes.
 
 The demo uses the locally installed `gemma4:e2b` model. Local model output can still be inaccurate, so the app explicitly tells people to review suggestions.
+
+The source is available under the MIT License.
 
 ## Why Does Open Innovation Matter?
 
@@ -39,3 +41,7 @@ Running an open-weight model locally keeps terminal content on the developer’s
 ## The Spirit of It
 
 Build errors are spooky enough. PhantomShell gives them a plain-language explanation, while keeping the shell itself untouched.
+
+## Prize Categories
+
+Best Use of Gemma — the demo runs the open-weight `gemma4:e2b` model locally through Ollama.

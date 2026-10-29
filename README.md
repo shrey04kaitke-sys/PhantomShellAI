@@ -109,4 +109,4 @@ PhantomShell/
 
 ## License
 
-This project is provided as-is for the Hacktoberfest Week 4 build. Add a project license before redistributing if your event requires one.
+PhantomShell AI is licensed under the MIT License. See [LICENSE](LICENSE) for the full text.
